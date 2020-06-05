@@ -56,7 +56,11 @@ If the number of clients is not defined, then used 10 clients.
 
 Install DNS Server if it's not installed.
 
-Configure IP forwarding 
+Configure IP forwarding if not configured
+```
+sysctl net.ipv4.ip_forward=1
+echo 'net.ipv4.ip_forward = 1' > /etc/sysctl.d/99-sysctl.conf
+```
 
 ### Usage
 
