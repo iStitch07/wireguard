@@ -30,8 +30,8 @@ Address = 10.0.0.1/24
 SaveConfig = true
 ListenPort = 51820
 PrivateKey = ${server_private_key}
-PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -A FORWARD -o %i -j ACCEPT; iptables -t nat -A POSTROUTING -o ${server_public_interface} -j MASQUERADE
-PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -D FORWARD -o %i -j ACCEPT; iptables -t nat -D POSTROUTING -o ${server_public_interface} -j MASQUERADE
+PostUp = iptables -I FORWARD 1 -i %i -o ${server_public_interface} -j ACCEPT; iptables -I FORWARD 1 -i ${server_public_interface} -o %i -j ACCEPT; iptables -t nat -A POSTROUTING -o ${server_public_interface} -j MASQUERADE
+PostDown = iptables -D FORWARD -i %i -o ${server_public_interface} -j ACCEPT; iptables -D FORWARD -i ${server_public_interface} -o %i -j ACCEPT; iptables -t nat -D POSTROUTING -o ${server_public_interface} -j MASQUERADE
 EOL
 
 echo
