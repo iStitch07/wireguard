@@ -23,7 +23,7 @@ This script:
 * Installs all necessary software on an empty Ubuntu DigitalOcean droplet
 (it should also work with most modern Ubuntu images)
 * Configures IPv4 forwarding and iptables rules
-* Sets up [unbound](https://github.com/NLnetLabs/unbound) DNS resolver 
+* Sets up local IP as DNS resolver (must be installed manually)
 * Creates a server and clients configurations
 * Installs [qrencode](https://github.com/fukuchi/libqrencode/)
 * Runs [WireGuard](https://www.wireguard.com)
@@ -54,7 +54,9 @@ If the number of clients is not defined, then used 10 clients.
 
 ### Prerequisites
 
-Install [WireGuard](https://www.wireguard.com) if it's not installed.
+Install DNS Server if it's not installed.
+
+Configure IP forwarding 
 
 ### Usage
 
