@@ -27,7 +27,7 @@ echo -e "\t$(pwd)/${server_config}"
 cat > "${server_config}" <<EOL
 [Interface]
 Address = 10.0.0.1/24
-SaveConfig = true
+SaveConfig = false
 ListenPort = 51820
 PrivateKey = ${server_private_key}
 PostUp = iptables -I FORWARD 1 -i %i -o ${server_public_interface} -j ACCEPT; iptables -I FORWARD 1 -i ${server_public_interface} -o %i -j ACCEPT; iptables -t nat -A POSTROUTING -o ${server_public_interface} -j MASQUERADE
