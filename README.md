@@ -2,7 +2,7 @@
 
 ## WARNING
 This repository optimised only for my cloud environment 
-For general pourpose use original [drew2a repository] (https://github.com/drew2a/wireguard)
+For general pourpose use original [drew2a repository](https://github.com/drew2a/wireguard)
 
 This repository contains scripts that make it easy to configure [WireGuard](https://www.wireguard.com)
 on [VPS](https://en.wikipedia.org/wiki/Virtual_private_server).
